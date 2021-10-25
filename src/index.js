@@ -1,7 +1,7 @@
 const Discord = require('discord.js');
-const TOKEN = process.env.TOKEN;
 const fs = require('fs');
 const path = require('path');
+require('dotenv').config();
 const prefix = '-'
 
 const bot = new Discord.Client();
@@ -17,7 +17,7 @@ for (let filename of commandFiles) {
   bot.commands.set(command.name, command)
 }
 
-bot.login('NzA3MzQxMzMyNzE2NDUzOTQ5.XrHbuw.ySbTRpZcwqJ7xgub92llIE1oBc0');
+bot.login(process.env.TOKEN);
 
 
 bot.on('ready', () => {
